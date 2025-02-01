@@ -69,7 +69,7 @@ app.post("/players", async (req, res) => {
 });
 
 // EDIT.
-app.get("/players/:playerId/edit", async (req, res) => {
+app.get("/player/:playerId/edit", async (req, res) => {
    const foundPlayer = await Player.findById(req.params.playerId);
    res.render("players/edit.ejs", { player: foundPlayer });
 });
