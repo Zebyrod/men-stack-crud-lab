@@ -1,0 +1,25 @@
+<!-- views/players/show.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= player.name %></title>
+</head>
+<body>
+    <a href="/players/"> Back to All Players</a>
+    <a href="/">Home</a>
+    <h1><%= player.name %></h1>
+    <% if (player.isActive) { %>
+        <p><%= player.name %> is still an active player in the league!</p>
+    <% } else { %>
+        <p><%= player.name %> is not an active player in the league.</p>
+    <% } %>
+    
+    <form action="/players/<%=player._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= player.name %></button>
+    </form>
+
+    <a href="/player/<%= player._id %>/edit">Edit <%= player.name %> info</a>
+</body>
+</html>

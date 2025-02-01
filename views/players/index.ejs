@@ -1,0 +1,23 @@
+<!-- views/players/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Players Index</title>
+	</head>
+
+	<body>
+<a href="/players/new">Add A New Player</a>
+<a href="/">Home</a>
+		<h1>All Players</h1>
+		<ul>
+			<% players.forEach(player => { %>
+			<li>
+				<a href="/players/<%= player._id %>"> <%= player.name %> </a>
+			</li>
+			<% }); %>
+		</ul>
+	</body>
+</html>
